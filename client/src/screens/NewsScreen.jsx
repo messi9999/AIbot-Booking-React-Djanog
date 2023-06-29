@@ -5,7 +5,7 @@ export default function NewsScreen() {
   return (
     <>
         <div><Header /></div>
-        <div className="bg-sky-300 h-screen">News</div>
+        <div className="bg-sky-300" style={{height:"880px"}}>News</div>
     </>
   )
 }

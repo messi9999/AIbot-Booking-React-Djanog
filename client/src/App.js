@@ -4,6 +4,8 @@ import HomeScreen from "./screens/HomeScreen";
 import ScheduleScreen from "./screens/ScheduleScreen";
 import ChatScreen from "./screens/ChatScreen";
 import NewsScreen from "./screens/NewsScreen";
+import Login from "./components/Login";
+import Register from "./components/Register";
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
         <Route path="/schedule" element={<ScheduleScreen />} />
         <Route path="/chat" element={<ChatScreen />} />
         <Route path="/news" element={<NewsScreen />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </>
   );

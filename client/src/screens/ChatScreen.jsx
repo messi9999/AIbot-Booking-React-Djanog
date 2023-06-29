@@ -13,7 +13,7 @@ export default function ChatScreen() {
   const [loading, setLoading] = useState(false);
 
   const [question, setQuestion] = useState("");
-  const [answer, setAnswer] = useState("");
+  // const [answer, setAnswer] = useState("");
   const [chats, setChats] = useState([]);
 
   const ref = useRef();
@@ -39,7 +39,7 @@ export default function ChatScreen() {
     */
     AskTOOpenAI(chat_question.content).then(
       (res) => {
-        setAnswer(res)
+        // setAnswer(res)
         const chat_answer = {
           isquestion: false,
           content: res
@@ -56,8 +56,8 @@ export default function ChatScreen() {
   return (
     <>
         <div><Header /></div>
-        <div className="bg-sky-300 h-screen p-20">
-          <div className='bg-white w-11/12 h-5/6 rounded-xl p-10 overflow-y-auto scrollbar-hide'>
+        <div className="bg-sky-300 pt-10 ps-10" style={{height:"880px"}}>
+          <div className='bg-white w-9/12 h-5/6 rounded-xl p-10 overflow-y-auto scrollbar-hide'>
             {chats.map((chat, index) => {
                 return (
                   <div key={index}>
@@ -72,9 +72,9 @@ export default function ChatScreen() {
                 );
               })}
           </div>
-          <div className='flex flex-row mt-5 w-11/12'>
+          <div className='flex flex-row mt-5 w-9/12'>
             <div className='flex flex-row justify-start w-screen pe-4'> 
-              <input className='w-full text-xl p-5 rounded-xl bg-slate-200 outline outline-slate-500' value = {question} placeholder="Ask some questions" onChange={e=>setQuestion(e.target.value)}></input>
+              <input className='w-full text-lg p-5 rounded-xl bg-slate-200 outline outline-slate-500' value = {question} placeholder="Ask some questions" onChange={e=>setQuestion(e.target.value)}></input>
             </div>
             <div className='flex justify-center align-items-center'>
               <LoadingButton

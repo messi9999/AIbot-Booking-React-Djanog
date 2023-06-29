@@ -6,7 +6,9 @@ module.exports = {
     "./src/screens/ScheduleScreen.jsx",
     "./src/screens/ChatScreen.jsx",
     "./src/components/ChatAnswer.jsx",
-    "./src/components/ChatQuestion.jsx"
+    "./src/components/ChatQuestion.jsx",
+    "./src/components/Login.jsx",
+    "./src/components/Register.jsx"
   ],
   theme: {
     extend: {}
