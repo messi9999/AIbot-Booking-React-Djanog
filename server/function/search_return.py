@@ -17,24 +17,32 @@ def search_news(query):
         #     print(d)
         
         # Check if there are search results
+        result = []
+        each_item = {}
+        
         if 'items' in data:
             for item in data['items']:
-                title = item['title']
-                url = item['link']
-                snippet = item['snippet']
-
-                # Display the URL and content of each news item
-                print('------------------------------------')
-                print(f'Title: {title}')
-                print(f'URL: {url}')
-                print(f'Content: {snippet}\n')
+                # title = item['title']
+                # url = item['link']
+                # snippet = item['snippet']
+                each_item['title'] = item['title']
+                each_item['url'] = item['link']
+                each_item['content'] = item['snippet']
+                # # Display the URL and content of each news item
+                # print('------------------------------------')
+                # print(f'Title: {title}')
+                # print(f'URL: {url}')
+                # print(f'Content: {snippet}\n')
+                result.append(each_item)
+            
         else:
             print('No search results found.')
+        return result
     except requests.exceptions.HTTPError as error:
         print(f'Error occurred while fetching search results: {error}')
     except requests.exceptions.RequestException as error:
         print(f'An unexpected error occurred: {error}')
 
-# Example usage
-search_query = input('Enter your search query: ')
-search_news(search_query)
+# # Example usage
+# search_query = input('Enter your search query: ')
+# search_news(search_query)
